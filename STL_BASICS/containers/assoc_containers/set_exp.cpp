@@ -1,6 +1,12 @@
 /*
-* set
-* - No Duplicates
+* set - no duplicates
+* multiset - allows duplicates
+* multiset<int> myset;
+* set/multiset: value of elements cannot be modified
+* *it=10; //*it is read only
+* 1. Fast Search : O(log(n))
+* 2. Traversing is slow ( compared to vector and deque)
+* 3. no random access, no [] operator
 */
 #include <set>
 #include <iostream>
@@ -32,6 +38,8 @@ int main(){
     //The position where 9 will be inserted cannot be decided by you
     //Since this is an ordered set, the poistion will be decided
     //based on its own value
+    // but it parameter is used as a hint to find where 9 will be inserted
+    // If we provide a good it, we can reduce time from O(log(n) to O(1)
     myset.insert(it,9); // myset: {1, 3, 7, 9} O(log(n)) => O(1)
     display(myset);                    // it points to 3
     myset.erase(it); //myset:{1,7,9}
