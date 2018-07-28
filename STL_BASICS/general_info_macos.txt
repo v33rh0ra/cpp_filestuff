@@ -1,0 +1,2 @@
+1. Use the following way to execute your c++ code on mac os instead of g++
+clang++ -std=c++11 -stdlib=libc++ associative_array.cpp -o asarr.o
